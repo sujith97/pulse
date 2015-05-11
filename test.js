@@ -55,5 +55,5 @@ function fileRead(data) {
 	    	});
 		}
 	});
-	return root;
+	console.log("Data\n" + JSON.stringify(root));
 }
