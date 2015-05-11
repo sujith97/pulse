@@ -1,0 +1,21 @@
+<div ui-view>
+	<div class="row cp-components">
+		<div ng-class='uaCtrl.getColSize()' ng-repeat='app in uaCtrl.impact'>
+			<div class="panel panel-default">
+			  <div class="panel-heading">
+			  	<a ui-sref="useraction.application({application:app.application})">
+				    <h3 class="panel-title">
+				    	{{app.application}}
+				    </h3>
+			   	</a>
+			  </div>
+			  <div class="list-group">
+			  	<a class="list-group-item" ng-repeat='item in app.components'>
+			  		<div>{{item.component}}</div>
+			  		<small class="label label-danger">{{item.action}}</small><span class="badge" style="">{{item.sequenceNo}}</span>
+			  	</a>
+			  </div>
+			</div>
+		</div>
+	</div>
+</div>

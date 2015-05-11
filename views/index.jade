@@ -1,0 +1,24 @@
+extends layout
+
+block content
+	.cp-banner
+		.logo
+			.name CAPCO
+			.capco-horizontal-bar
+			.capco-vertical-bar
+			.capco-horizontal-bar-bottom
+	.cp-container
+		.panel.panel-default.cp-nav.cp-nav-left
+			.panel-heading
+				h3.panel-title
+					| User Actions
+				span
+			.list-group
+				each userAction, index in response.userActions
+					a.list-group-item(href='#/userAction/' + userAction ng-class='{active:mainCtrl.isActive("' + userAction + '")}')=userAction
+		.panel.panel-default.cp-nav.cp-nav-right
+			.panel-heading
+				h3.panel-title
+					| Applications
+			.panel-body
+				ui-view

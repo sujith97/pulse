@@ -1,0 +1,15 @@
+doctype html
+html
+	head
+		title= title
+		link(rel='stylesheet', href='/stylesheets/base.css')
+		link(rel='stylesheet', href='/node_modules/bootstrap/dist/css/bootstrap.min.css')
+	body(ng-app='pulse' ng-controller='MainCtrl as mainCtrl')
+		block content
+		script(src='/node_modules/jquery/dist/jquery.min.js')
+		script(src='/node_modules/bootstrap/dist/js/bootstrap.min.js')
+		script(src='/node_modules/angular/angular.min.js')
+		script(src='/node_modules/angular-ui-router/release/angular-ui-router.min.js')
+		script(src="/javascripts/app.js")
+		script(src="/javascripts/controllers/uaController.js")
+		script(src="/javascripts/services/uaService.js")
