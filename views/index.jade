@@ -12,10 +12,14 @@ block content
 			.panel-heading
 				h3.panel-title
 					| User Actions
-				span
+				select.form-control(ng-model="errorCode")
+					option(selected) Error Code
+					each errorCode in response.errorCodes
+						option=errorCode
 			.list-group
 				each userAction, index in response.userActions
 					a.list-group-item(href='#/userAction/' + userAction ng-class='{active:mainCtrl.isActive("' + userAction + '")}')=userAction
+						i.glyphicon.glyphicon-thumbs-up(style="float:right", ng-show="show('" + userAction + "')")
 		.panel.panel-default.cp-nav.cp-nav-right
 			.panel-heading
 				h3.panel-title

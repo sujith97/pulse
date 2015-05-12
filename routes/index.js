@@ -18,5 +18,9 @@ router.get('/useraction/:userAction/:application', function(req, res, next) {
 	res.json(response);
 });
 
+router.get('/useractions/errorcode/:errorCode', function(req, res, next) {
+	var response = service.getUserActionsForErrorCode(req.params.errorCode);
+	res.json(response);
+});
 
 module.exports = router;

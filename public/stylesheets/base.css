@@ -69,3 +69,10 @@ body {
   height: 100%;
   overflow: auto;
 }
+a.error {
+  background-color: #e83f3f;
+  color: #fff !important;
+}
+a.error:hover {
+  color: #000 !important;
+}

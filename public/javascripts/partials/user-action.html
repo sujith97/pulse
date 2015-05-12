@@ -10,20 +10,13 @@
 			   	</a>
 			  </div>
 			  <div class="list-group">
-			  	<a class="list-group-item" ng-repeat='item in app.components'>
+			  	<a ng-class="{'list-group-item': true, 'error': uaCtrl.isErrorCodeFound({{item.errorCodes}})}" ng-repeat='item in app.components'>
 			  		<div>{{item.component}} <span class="badge" style="float:right">{{item.sequenceNo}}</span>	</div>
 			  		<div class="row">
 			  			<div class="col-md-12">
-			  					<small class="label label-info">{{item.action}}</small>
+			  				<small class="label label-primary">{{item.action}}</small>
 			  			</div>
 			  		</div>
-			  		
-			  		<div class="row" ng-show="{{item.errorCodes}}">
-			  			<div class="col-md-12">
-			  					<small class="label label-danger">Error Codes: {{item.errorCodes}}</small>
-			  			</div>
-			  		</div>
-			  		
 			  	</a>
 			  </div>
 			</div>

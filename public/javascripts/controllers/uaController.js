@@ -15,6 +15,23 @@
 		vm.getColSize = function() {
 			return 'col-md-' + 12/vm.impact.length;
 		}
+
+		$scope.$on('errorCodeSelected', function(event, errorCode) {
+			vm.errorCodeSelected = errorCode;
+		});
+
+		$scope.$emit('menuItemChanged');
+
+		vm.isErrorCodeFound = function(errorCodes) {
+			if (errorCodes) {
+				if(errorCodes.indexOf(parseInt(vm.errorCodeSelected)) != -1) {
+					return true;
+				} else {
+					return false;
+				}
+			}
+			
+		}
 	};
 
 	CompCtrl.$inject = ['$scope', '$stateParams', 'uaService'];
